@@ -11,18 +11,24 @@ ChartForm {
                 id:chartView
                 theme: ChartView.ChartThemeBlueNcs
                 titleColor: "white"
-                animationOptions: ChartView.AllAnimations
+                //animationOptions: ChartView.AllAnimations
                 anchors.fill: parent
                 ValueAxis {
-                    id: axisX
-                    min: -100
-                    max: 1024
+                    id: axisY1
+                    min: -1
+                    max: 4
                 }
 
                 ValueAxis {
-                    id: axisY
+                    id: axisY2
                     min: -10
-                    max: 10
+                    max: 5
+                }
+
+                ValueAxis {
+                    id: axisX
+                    min: 0
+                    max: 1024
                 }
                 LineSeries {
                     id: lineSeries1
@@ -34,11 +40,11 @@ ChartForm {
                     id: lineSeries2
                     name: "signal 2"
                     axisX: axisX
-                    axisY: axisY
+                    axisY: axisY2
                 }
                 Timer {
                     id: refreshTimer
-                    interval: 1 / 60 * 1000 // 60 Hz
+                    interval: 1 / 60 * 1500 // 60 Hz
                     running: true
                     repeat: true
                     onTriggered: {
