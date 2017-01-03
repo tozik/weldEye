@@ -54,6 +54,7 @@ private:
     QQuickView *m_appViewer;
     QList<QVector<QPointF> > m_data;
     int m_index;
+    float pointrand[20]={1,1,2,2,3,3,4,2,5,1,6,2,7,3,8,2,9,1,10,2};
 signals:
 
 };
