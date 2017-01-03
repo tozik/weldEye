@@ -24,10 +24,10 @@ int main(int argc, char *argv[])
 
     viewer.engine()->addImportPath(extraImportPath.arg(QGuiApplication::applicationDirPath(),
                                       QString::fromLatin1("qml")));
-    qmlRegisterType<scaner>("ScanerModule",1,0,"ScanerType");
 
-//    scaner Scaner(&viewer);
-//    viewer.rootContext()->setContextProperty("Scaner",&Scaner);
+
+    scaner deviceScaner(&viewer);
+    viewer.rootContext()->setContextProperty("deviceScaner",&deviceScaner);
 
 //    QQmlApplicationEngine engine;
 //    engine.load(QUrl(QLatin1String("qrc:/main.qml")));

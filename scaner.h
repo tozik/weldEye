@@ -27,11 +27,13 @@ class scaner : public QObject
 
 public:
 
-    explicit scaner();
+    explicit scaner(QQuickView *appViewer, QObject *parent = 0);
 
 Q_SIGNALS:
 public slots:
 
+    void generateData(int type, int rowCount, int colCount);
+    void update(QAbstractSeries *series);
     void search();
     void connectionTO();
     void measurement();
@@ -49,6 +51,9 @@ private:
     RFDevice::RFEthernetDetector ld;                                 //	Создание объекта для поиска
     USHORT nPoints;                                                  //  количество тоечк
 
+    QQuickView *m_appViewer;
+    QList<QVector<QPointF> > m_data;
+    int m_index;
 signals:
 
 };
