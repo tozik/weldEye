@@ -1,12 +1,5 @@
 #include "scaner.h"
 
-    int nRF625;                                                      // Количество найденных девайсов
-    int i, j, k;
-    float PointsBuffer[RFDevice::RF625Device::ProfileValuesCount];  //	Буфер для максимального количества (Х,Z *1280)
-    std::vector <RFDevice::RF625Device *> vRF625;                         //
-    RFDevice::RFEthernetDetector ld;                                 //	Создание объекта для поиска
-    USHORT nPoints;                                                  //  количество тоечк
-
 
     QT_CHARTS_USE_NAMESPACE
 
@@ -114,39 +107,6 @@ void scaner::measurement()
         }
     }
 
-float* scaner :: Points()
-{
-    for (k=0; k<MEASURES_TO_DO; k++)
-    {
-        for (i=0; i<nRF625; i++)
-        {
-            if (GETRESULT_ERROR_VALUE==vRF625[0]->GetNormalizedResult(PointsBuffer, &nPoints))
-            {
-                std::cout << "Failed to read measure from RF625Device #" << i << std::endl;
-
-            }
-            else {
-                scaner::getRes(PointsBuffer,nPoints);
-            }
-            if (nRF625 > 0) ::Sleep(1);
-
-
-        }
-}
-
-}
-
-void scaner::getRes(float* buf, USHORT numb)
-{
-    std::cout << "RF625Device #0 TEST"  << ": " <<  std::endl << "  {";
-    for (j=0; j<numb; j++)
-    {
-        std::cout << buf[j*2] << "," << buf[j*2+1];
-        if (j<numb-1)
-            std::cout<<"; ";
-    }
-    std::cout << "--------------------OK}" << std::endl;
-}
 
 void scaner::disconnection()
 {

@@ -3,6 +3,7 @@ QT += quick
 QT += quickcontrols2
 QT += widgets
 QT += core
+QT += charts
 CONFIG += c++11
 
 SOURCES += main.cpp \

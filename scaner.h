@@ -38,12 +38,17 @@ public slots:
     void disconnection();
     void releaseMemory();
     void cleanUpRfdevice();
-    float* Points();
-    void getRes(float*,USHORT);
 
 
 private:
-    float points;
+
+    int nRF625;                                                      // Количество найденных девайсов
+    int i, j, k;
+    float PointsBuffer[RFDevice::RF625Device::ProfileValuesCount];  //	Буфер для максимального количества (Х,Z *1280)
+    std::vector <RFDevice::RF625Device *> vRF625;                         //
+    RFDevice::RFEthernetDetector ld;                                 //	Создание объекта для поиска
+    USHORT nPoints;                                                  //  количество тоечк
+
 signals:
 
 };
