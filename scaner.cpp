@@ -190,11 +190,13 @@ void scaner::releaseMemory()
         if (p) delete p;
         vRF625.pop_back();
     }
+    std::cout<<"ReleaseMemory"<<std::endl;
 }
 
 void scaner::cleanUpRfdevice()
 {
     RFDevice::Cleanup();
+    std::cout<<"cleanUP"<<std::endl;
 }
 
 
