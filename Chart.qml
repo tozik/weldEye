@@ -40,7 +40,7 @@ ChartForm {
                     id: lineSeries2
                     name: "signal 2"
                     axisX: axisX
-                    axisY: axisY2
+                    axisYRight:axisY2
                 }
                 Timer {
                     id: refreshTimer
@@ -49,7 +49,7 @@ ChartForm {
                     repeat: true
                     onTriggered: {
                              deviceScaner.update(chartView.series(0));
-                            deviceScaner.update(chartView.series(1));
+                          //  deviceScaner.update(chartView.series(1));
 
                     }
                 }

@@ -65,8 +65,12 @@ void scaner::generateData(int type, int rowCount, int colCount)
                 break;
             }
             points.append(QPointF(x, y));
+            std::cout<<"i="<<i<<"\tj="<<j<<std::endl;
+            std::cout<<"x== "<<x<<"\ty== "<<y<<"; ";
+
         }
         m_data.append(points);
+    std::cout<<"rowCount=="<<rowCount;
     }
 }
 void scaner:: search()
