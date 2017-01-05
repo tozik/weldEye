@@ -15,8 +15,8 @@ ChartForm {
                 anchors.fill: parent
                 ValueAxis {
                     id: axisY1
-                    min: -1
-                    max: 4
+                    min: -2
+                    max: 8
                 }
 
                 ValueAxis {
@@ -34,7 +34,7 @@ ChartForm {
                     id: lineSeries1
                     name: "signal 1"
                     axisX: axisX
-                    axisY: axisY
+                    axisY: axisY1
                 }
                 LineSeries {
                     id: lineSeries2
@@ -44,10 +44,11 @@ ChartForm {
                 }
                 Timer {
                     id: refreshTimer
-                    interval: 1 / 60 * 1500 // 60 Hz
+                    interval: 1 / 60 * 500 // 60 Hz
                     running: true
                     repeat: true
                     onTriggered: {
+                            console.log("onTrig");
                              deviceScaner.update(chartView.series(0));
                           //  deviceScaner.update(chartView.series(1));
 
