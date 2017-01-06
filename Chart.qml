@@ -15,20 +15,20 @@ ChartForm {
                 anchors.fill: parent
                 ValueAxis {
                     id: axisY1
-                    min: -2
-                    max: 8
+                    min: 0
+                    max: 6
                 }
 
                 ValueAxis {
                     id: axisY2
-                    min: -10
-                    max: 5
+                    min: 0
+                    max: 6
                 }
 
                 ValueAxis {
                     id: axisX
                     min: 0
-                    max: 1024
+                    max: 6
                 }
                 LineSeries {
                     id: lineSeries1
@@ -44,12 +44,12 @@ ChartForm {
                 }
                 Timer {
                     id: refreshTimer
-                    interval: 1 / 60 * 500 // 60 Hz
+                    interval: 1 / 60 * 1000 // 60 Hz
                     running: true
                     repeat: true
                     onTriggered: {
-                            console.log("onTrig");
-                             deviceScaner.update(chartView.series(0));
+                           // console.log("onTrig");
+                           //  deviceScaner.update(chartView.series(0));
                           //  deviceScaner.update(chartView.series(1));
 
                     }
