@@ -21,7 +21,7 @@ scaner::scaner(QQuickView *appViewer, QObject *parent) :    QObject(parent),
     qRegisterMetaType<QAbstractSeries*>();
     qRegisterMetaType<QAbstractAxis*>();
 
-   // generateData(0, 2, 20);
+    generateData(0, 2, 20);
    // con<<" CONSTRUCTORgenerateData";
     }
 void scaner::update(QAbstractSeries *series)
@@ -41,57 +41,74 @@ void scaner::update(QAbstractSeries *series)
 
       // QVector<QPointF> points = m_data.at(m_index);
         // Use replace instead of clear + append, it's optimized for performance
-        for (int i=0;i<20;i++)
+        for (i=0; i<nRF625; i++)
         {
-        xySeries->append(pointrand[i*2],pointrand[i*2+1]);
+            if (GETRESULT_ERROR_VALUE == vRF625[i]->GetNormalizedResult(PointsBuffer, &nPoints))
+            {
+                std::cout << "Failed to read measure from RF625Device #" << i << std::endl;
+            }
+            else
+            {
 
+                for (j=0; j<nPoints; j++)
+                {
+                   xySeries->append(PointsBuffer[j*2],PointsBuffer[j*2+1]);
+
+                }
+                for (int k=0; k<nPoints;k++)
+                {
+            //     std::cout<<PointsBuffer[k]<<"\t";
+}            }
+        }
+      //
+        if (nRF625 > 0) ::Sleep(100);
     }
      //   con<<"replace";
     }
-}
+//}
 
 void scaner::generateData(int type, int rowCount, int colCount)
 {
-   // con<<"func generate";
+    con<<"func generate";
     // Remove previous data
-//    foreach (QVector<QPointF> row, m_data)
-//        row.clear();
-//    con<<"foreach row.clear";
-//    m_data.clear();
+    foreach (QVector<QPointF> row, m_data)
+        row.clear();
+    con<<"foreach row.clear";
+    m_data.clear();
 
-//    // Append the new data depending on the type
-//    for (int i(0); i < rowCount; i++) {
-//        con<<"first for appened"<<rowCount;
-//        QVector<QPointF> points;
-//        points.reserve(colCount);
-//        for (int j(0); j < colCount; j++) {
-//            qreal x(0);
-//            qreal y(0);
-//            switch (type) {
-//            case 0:
-//                // data with sin + random component
-//                y = qSin(3.14159265358979 / 50 * j) + 0.5 + (qreal) rand() / (qreal) RAND_MAX;
-//                x = j;
-//                break;
-//            case 1:
-//                // linear data
-//                x = j;
-//                y = (qreal) i / 10;
-//                break;
-//            default:
-//                // unknown, do nothing
-//                break;
-//            }
-//            points.append(QPointF(x, y));
-//            std::cout<<"i="<<i<<"\tj="<<j<<std::endl;
-//            std::cout<<"x== "<<x<<"\ty== "<<y<<"; ";
+    // Append the new data depending on the type
+    for (int i(0); i < rowCount; i++) {
+        con<<"first for appened"<<rowCount;
+        QVector<QPointF> points;
+        points.reserve(colCount);
+        for (int j(0); j < colCount; j++) {
+            qreal x(0);
+            qreal y(0);
+            switch (type) {
+            case 0:
+                // data with sin + random component
+                y = qSin(3.14159265358979 / 50 * j) + 0.5 + (qreal) rand() / (qreal) RAND_MAX;
+                x = j;
+                break;
+            case 1:
+                // linear data
+                x = j;
+                y = (qreal) i / 10;
+                break;
+            default:
+                // unknown, do nothing
+                break;
+            }
+            points.append(QPointF(x, y));
+            std::cout<<"i="<<i<<"\tj="<<j<<std::endl;
+            std::cout<<"x== "<<x<<"\ty== "<<y<<"; ";
 
-//        }
-//        m_data.append(points);
-   //     std::cout<<std::endl;
- //   std::cout<<"  m_data.append(points); rowCount=="<<rowCount<<std::endl;
+        }
+        m_data.append(points);
+        std::cout<<std::endl;
+    std::cout<<"  m_data.append(points); rowCount=="<<rowCount<<std::endl;
     }
-//}
+}
 void scaner:: search()
 {
     RFDevice::Initialize();
@@ -166,7 +183,7 @@ void scaner::connectionTO()
 void scaner::measurement()
 {
 
-        for (k=0; k<MEASURES_TO_DO; k++)
+        for (k=0; k<10; k++)
         {
             for (i=0; i<nRF625; i++)
             {
