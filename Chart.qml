@@ -7,6 +7,7 @@ ChartForm {
 
         ChartView
         {
+                //Legend.enabled: false
                //legend.visible: false
                 id:chartView
                 title: "RF625"
@@ -16,14 +17,14 @@ ChartForm {
                 anchors.fill: parent
 
                 ValueAxis {
-                    id: axisY1
-                    min: 0
+                    id: axisY
+                    min: -5
                     max: 150
                 }
 
                 ValueAxis {
                     id: axisY2
-                    min: 0
+                    min: -5
                     max: 150
                 }
 
@@ -38,16 +39,19 @@ ChartForm {
                     borderColor: 'red'
                     markerSize: 2
                     axisX: axisX
-                    axisY: axisY1
+                    axisY: axisY
+                    //Legend.enabled: false
                 }
 
-//                LineSeries {
-//                    id: lineSeries2
-//                    name: "signal 2"
-//                    axisX: axisX
-//                    axisYRight:axisY2
-
-//                }
+                ScatterSeries
+                {
+                    id:pointSeries2
+                    borderWidth: 2
+                    borderColor: 'blue'
+                    axisYRight: axisY2
+                    axisX:axisX
+                    //Legend.enabled: false
+                }
                 Timer {
                     id: refreshTimer
                     interval: 1/ 60 * 1000 // 60 Hz
@@ -56,7 +60,7 @@ ChartForm {
                     onTriggered: {
                             console.log("onTrig");
                             deviceScaner.update(chartView.series(0));
-                          //  deviceScaner.update(chartView.series(1));
+                            deviceScaner.firstTemplate(chartView.series(1));
 
                     }
                 }

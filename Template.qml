@@ -21,6 +21,7 @@ TemplateForm {
                     fourth.opacity=0.5
                     fifth.opacity=0.5
                     sixth.opacity=0.5
+
                     }
             }
          }

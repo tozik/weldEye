@@ -48,48 +48,45 @@ void scaner::update(QAbstractSeries *series)
                    xySeries->append(PointsBuffer[j*2],PointsBuffer[j*2+1]);
 
                 }
-                for (int k=0; k<nPoints;k++)
-                {
+                qDebug("end cycle scaner::update");
 
-}
             }
         }
 
       }
 
     }
+void scaner::firstTemplate(QAbstractSeries *series)
+{
 
-//void scaner::generateData(int type, int rowCount, int colCount)
-//{
-//    con<<"func generate";
-//    foreach (QVector<QPointF> row, m_data) // Remove previous data
-//        row.clear();
-//    m_data.clear();
+    qDebug("scaner::firsttemplate");
+    QScatterSeries *point = static_cast<QScatterSeries *>(series);     // приведение типов
+    point->clear();
+    for (i=0; i<nRF625; i++)
+    {
+        if (GETRESULT_ERROR_VALUE == vRF625[i]->GetNormalizedResult(PointsBuffer, &nPoints))
+        {
+            std::cout << "Failed to read measure from RF625Device #" << i << std::endl;
+        }
+        else
+        {
+            float findX=150;
+            float findY=150;
+            for (j=0; j<nPoints; j++)
+            {
+                if (PointsBuffer[j*2+1]<findY)
+                {
+                        findX=PointsBuffer[j*2];
+                        findY=PointsBuffer[j*2+1];
+                 }
+            }
+            point->append(findX,findY);
+            std::cout<<"x="<<findX<<"y="<<findY<<endl;
 
-//    for (int i(0); i < rowCount; i++) { // Append the new data depending on the type
-//        con<<"first for appened"<<rowCount;
-//        QVector<QPointF> points;
-//        points.reserve(colCount);
-//        for (int j(0); j < colCount; j++) {
-//            qreal x(0);
-//            qreal y(0);
-//            switch (type) {
-//            case 0:
-//                y = qSin(3.14159265358979 / 50 * j) + 0.5 + (qreal) rand() / (qreal) RAND_MAX;
-//                x = j;
-//                break;
-//            case 1:
-//                x = j;
-//                y = (qreal) i / 10;
-//                break;
-//            default:
-//                break;
-//            }
-//            points.append(QPointF(x, y));
-//        }
-//        m_data.append(points);
-//    }
-//}
+        }
+    }
+
+}
 void scaner:: search()
 {
     RFDevice::Initialize();
