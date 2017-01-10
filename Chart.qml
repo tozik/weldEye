@@ -7,12 +7,14 @@ ChartForm {
 
         ChartView
         {
-
+               //legend.visible: false
                 id:chartView
+                title: "RF625"
+
                 theme: ChartView.ChartThemeBlueNcs
-                titleColor: "white"
-                //animationOptions: ChartView.AllAnimations
+                animationOptions: ChartView.AllAnimations
                 anchors.fill: parent
+
                 ValueAxis {
                     id: axisY1
                     min: 0
@@ -27,29 +29,33 @@ ChartForm {
 
                 ValueAxis {
                     id: axisX
-                    min: -100
-                    max: 100
+                    min: -50
+                    max: 50
                 }
-                LineSeries {
+                ScatterSeries {
                     id: lineSeries1
-                    name: "signal 1"
+                    borderWidth: 0
+                    borderColor: 'red'
+                    markerSize: 2
                     axisX: axisX
                     axisY: axisY1
                 }
-                LineSeries {
-                    id: lineSeries2
-                    name: "signal 2"
-                    axisX: axisX
-                    axisYRight:axisY2
-                }
+
+//                LineSeries {
+//                    id: lineSeries2
+//                    name: "signal 2"
+//                    axisX: axisX
+//                    axisYRight:axisY2
+
+//                }
                 Timer {
                     id: refreshTimer
-                    interval: 100// / 60 * 1000 // 60 Hz
+                    interval: 1/ 60 * 1000 // 60 Hz
                     running: true
                     repeat: true
                     onTriggered: {
                             console.log("onTrig");
-                             deviceScaner.update(chartView.series(0));
+                            deviceScaner.update(chartView.series(0));
                           //  deviceScaner.update(chartView.series(1));
 
                     }

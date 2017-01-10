@@ -33,7 +33,7 @@ ControlsForm {
 
                                     udpButton.connectUdp=!udpButton.connectUdp;                             //twice button
                                     connectUdp ? tcpButton.enabled=true : tcpButton.enabled=false           //if press tsp dismis udpButton
-                                    !connectUdp ? deviceScaner.search() & deviceScaner.connectionTO() &deviceScaner.measurement() : deviceScaner.disconnection() & deviceScaner.releaseMemory() & deviceScaner.cleanUpRfdevice()
+                                    !connectUdp ? deviceScaner.search() & deviceScaner.connectionTO() : deviceScaner.disconnection() & deviceScaner.releaseMemory()// & deviceScaner.cleanUpRfdevice()
                                 }
 
                         }
@@ -200,5 +200,8 @@ ControlsForm {
                 {text: qsTr("Apply")}
          }
     }
+
+                Button
+                {text: qsTr("test button")}
 }
 }
