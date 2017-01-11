@@ -16,6 +16,7 @@ ChartForm {
                 animationOptions: ChartView.AllAnimations
                 anchors.fill: parent
 
+
                 ValueAxis {
                     id: axisY
                     min: -5
@@ -50,11 +51,12 @@ ChartForm {
                     borderColor: 'blue'
                     axisYRight: axisY2
                     axisX:axisX
+                    useOpenGL: chartView.openGL
                     //Legend.enabled: false
                 }
                 Timer {
                     id: refreshTimer
-                    interval: 1/ 60 * 1000 // 60 Hz
+                    interval: 1/// 60 * 1000 // 60 Hz
                     running: true
                     repeat: true
                     onTriggered: {

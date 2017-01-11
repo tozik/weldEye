@@ -202,6 +202,8 @@ ControlsForm {
     }
 
                 Button
-                {text: qsTr("test button")}
+                {
+                    text: qsTr("test button")
+                }
 }
 }
