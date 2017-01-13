@@ -43,14 +43,14 @@ void scaner::update(QAbstractSeries *series)
             else
             {
 
-//                for (j=0; j<nPoints; j++)
-//                {
-//                   xySeries->append(PointsBuffer[j*2],PointsBuffer[j*2+1]);
+                for (j=0; j<nPoints; j++)
+                {
+                   xySeries->append(PointsBuffer[j*2],PointsBuffer[j*2+1]);
 
-//                }
-                do{xySeries->append(PointsBuffer[j*2],PointsBuffer[j*2+1]);
-                    j++;}
-                while(j<nPoints);
+                }
+//                do{xySeries->append(PointsBuffer[j*2],PointsBuffer[j*2+1]);
+//                    j++;}
+//                while(j<nPoints);
                 qDebug("end cycle scaner::update");
 
             }

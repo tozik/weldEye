@@ -60,6 +60,12 @@ ControlsForm {
                 id:firstIP
                 width: 50
                 maximumLength: 3
+                validator: RegExpValidator
+                {
+                    regExp: /^((?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){0,3}(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$/
+                }
+                horizontalAlignment: "AlignHCenter"
+                verticalAlignment: "AlignVCenter"
 
             }
             Label{y:20;text: qsTr(".")}
@@ -68,6 +74,12 @@ ControlsForm {
                 id:secondIP
                 width: 50
                 maximumLength:3
+                validator: RegExpValidator
+                {
+                    regExp: /^((?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){0,3}(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$/
+                }
+                horizontalAlignment: "AlignHCenter"
+                verticalAlignment: "AlignVCenter"
             }
             Label{y:20;text: qsTr(".")}
             TextField
@@ -75,6 +87,12 @@ ControlsForm {
                 id:thirdIP
                 width: 50
                 maximumLength:3
+                validator: RegExpValidator
+                {
+                    regExp: /^((?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){0,3}(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$/
+                }
+                horizontalAlignment: "AlignHCenter"
+                verticalAlignment: "AlignVCenter"
             }
             Label{y:20;text: qsTr(".")}
             TextField
@@ -82,6 +100,12 @@ ControlsForm {
                 id:fourthIP
                 width: 50
                 maximumLength:3
+                validator: RegExpValidator
+                {
+                    regExp: /^((?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){0,3}(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$/
+                }
+                horizontalAlignment: "AlignHCenter"
+                verticalAlignment: "AlignVCenter"
             }
 
 

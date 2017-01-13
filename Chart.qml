@@ -13,7 +13,7 @@ ChartForm {
                 title: "RF625"
 
                 theme: ChartView.ChartThemeBlueNcs
-                animationOptions: ChartView.AllAnimations
+                //animationOptions: ChartView.AllAnimations
                 anchors.fill: parent
 
 
@@ -51,12 +51,11 @@ ChartForm {
                     borderColor: 'blue'
                     axisYRight: axisY2
                     axisX:axisX
-                    useOpenGL: chartView.openGL
                     //Legend.enabled: false
                 }
                 Timer {
                     id: refreshTimer
-                    interval: 1/// 60 * 1000 // 60 Hz
+                    interval: 4/// 60 * 1000 // 60 Hz
                     running: true
                     repeat: true
                     onTriggered: {
