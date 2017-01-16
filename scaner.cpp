@@ -6,6 +6,7 @@
 #include <QtQuick/QQuickItem>
 #include <QtCore/QDebug>
 #include <QtCore/QtMath>
+#include <QTcpServer>
 
 #define con qDebug()
 
@@ -17,13 +18,11 @@ Q_DECLARE_METATYPE(QAbstractAxis *)
 
 scaner::scaner(QQuickView *appViewer, QObject *parent) :    QObject(parent),
     m_appViewer(appViewer)
-    //m_index(-1)
+
 {
     qRegisterMetaType<QAbstractSeries*>();
     qRegisterMetaType<QAbstractAxis*>();
 
-    //generateData(0, 2, 20);
-   // con<<" CONSTRUCTORgenerateData";
     }
 void scaner::update(QAbstractSeries *series)
 {
@@ -48,10 +47,9 @@ void scaner::update(QAbstractSeries *series)
                    xySeries->append(PointsBuffer[j*2],PointsBuffer[j*2+1]);
 
                 }
-//                do{xySeries->append(PointsBuffer[j*2],PointsBuffer[j*2+1]);
-//                    j++;}
-//                while(j<nPoints);
+
                 qDebug("end cycle scaner::update");
+                counter++;
 
             }
         }
@@ -82,15 +80,17 @@ void scaner::firstTemplate(QAbstractSeries *series)
                         findX=PointsBuffer[j*2];
                         findY=PointsBuffer[j*2+1];
                  }
-                //std::cout<<"x="<<findX<<"y="<<findY<<endl;
             }
             point->append(findX,findY);
-            std::cout<<"x="<<findX<<"y="<<findY<<endl;
-
         }
     }
 
 }
+void scaner::secondTemplate(QAbstractSeries *series)
+{
+
+}
+
 void scaner:: search()
 {
     RFDevice::Initialize();
@@ -100,7 +100,7 @@ void scaner:: search()
 
     if(nRF625!=0)
     {
-        for (i=0; i<nRF625; i++)                                       //	Создание объектов для всех найденных девайсов
+        for (i=0; i<nRF625; i++)                                               //	Создание объектов для всех найденных девайсов
           {
               RFDevice::RF625Device *p = new RFDevice::RF625Device(ld[i]);
               if (p)
@@ -136,31 +136,6 @@ void scaner::connectionTO()
     std::cout<<"san9"<<std::endl;
 }
 
-/*void scaner::measurement()
-{
-    for (k=0; k<MEASURES_TO_DO; k++)
-    {
-        for (i=0; i<nRF625; i++)
-        {
-            if (GETRESULT_ERROR_VALUE == vRF625[i]->GetNormalizedResult(PointsBuffer, &nPoints))
-            {
-                std::cout << "Failed to read measure from RF625Device #" << i << std::endl;
-            }
-            else
-            {
-                std::cout << "RF625Device #" << i << ": " << nPoints << " points:" << std::endl << "  {";//	Print first VALUES_TO_PRINT values
-                for (j=0; j<MIN(VALUES_TO_PRINT,nPoints); j++)
-                {
-                    std::cout << PointsBuffer[j*2] << "," << PointsBuffer[j*2+1];
-                    if (j<MIN(VALUES_TO_PRINT-1,nPoints-1)) std::cout << "; ";
-                }
-                std::cout << "...}" << std::endl;
-            }
-        }
-        if (nRF625 > 0) ::Sleep(100);
-    }
-}
-*/
 
 void scaner::measurement()
 {
@@ -200,6 +175,7 @@ void scaner::disconnection()
         else
         {
             std::cout << "Disconnected(TCP) RF625Device #" << i << std::endl;
+            std::cout<<"couner="<<counter;
         }
     }
 }

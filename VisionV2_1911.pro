@@ -4,6 +4,7 @@ QT += quickcontrols2
 QT += widgets
 QT += core
 QT += charts
+QT += network
 CONFIG += c++11
 
 SOURCES += main.cpp \

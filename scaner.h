@@ -33,6 +33,7 @@ Q_SIGNALS:
 public slots:
 
     void firstTemplate(QAbstractSeries *series);
+    void secondTemplate(QAbstractSeries *series);
     void update(QAbstractSeries *series);
     void search();
     void connectionTO();
@@ -40,6 +41,7 @@ public slots:
     void disconnection();
     void releaseMemory();
     void cleanUpRfdevice();
+
 
 
 private:
@@ -53,6 +55,7 @@ private:
 
     QQuickView *m_appViewer;
     float pointrand[22]={1,1,2,2,3,3,4,2,5,1,6,2,7,3,8,2,9,1,10,2,4,6};
+    long int counter=0;
 signals:
 
 };
