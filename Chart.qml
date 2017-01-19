@@ -13,9 +13,9 @@ ChartForm {
                 title: "RF625"
 
                 theme: ChartView.ChartThemeBlueNcs
-                //animationOptions: ChartView.AllAnimations
+                animationOptions: ChartView.AllAnimations
                 anchors.fill: parent
-
+                property int count: 0
 
                 ValueAxis {
                     id: axisY
@@ -55,15 +55,15 @@ ChartForm {
                 }
                 Timer {
                     id: refreshTimer
-                    interval: 4/// 60 * 1000 // 60 Hz
+                    interval: 2000/// 60 * 1000 // 60 Hz
                     running: true
                     repeat: true
-                    onTriggered: {
-                            console.log("onTrig");
-                            deviceScaner.update(chartView.series(0));
-                            deviceScaner.firstTemplate(chartView.series(1));
+//                    onTriggered: {
+//                            console.log("onTrig");
+//                            deviceScaner.update(chartView.series(0));
+//                            deviceScaner.firstTemplate(chartView.series(1));
 
-                    }
+//                    }
                 }
         }
     }

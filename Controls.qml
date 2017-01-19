@@ -227,7 +227,13 @@ ControlsForm {
 
                 Button
                 {
-                    text: qsTr("test button")
+                    text: qsTr("test button server start")
+                    onClicked: {objServer.startServer()}
+
                 }
+                Button
+                {
+                text:qsTr("test close server")
+                onClicked: {objServer.closeServer()}}
 }
 }

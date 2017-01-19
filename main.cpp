@@ -10,6 +10,7 @@
 #include <QtQml/QQmlEngine>
 #include <QtCore/QDir>
 #include <QQmlEngine>
+#include "TcpServer.h"
 
 int main(int argc, char *argv[])
 {
@@ -28,6 +29,8 @@ int main(int argc, char *argv[])
 
     scaner deviceScaner(&viewer);
     viewer.rootContext()->setContextProperty("deviceScaner",&deviceScaner);
+    TcpServer objServer;
+    viewer.rootContext()->setContextProperty("objServer",&objServer);
 
 //    QQmlApplicationEngine engine;
 //    engine.load(QUrl(QLatin1String("qrc:/main.qml")));

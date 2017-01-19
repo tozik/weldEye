@@ -7,8 +7,11 @@ QT += charts
 QT += network
 CONFIG += c++11
 
+TARGET = TcpServer
+
 SOURCES += main.cpp \
-    scaner.cpp
+    scaner.cpp \
+    TcpServer.cpp
 
 RESOURCES += qml.qrc
 
@@ -51,4 +54,5 @@ HEADERS += \
     include/RFSerialDevice.h \
     include/RFString.h \
     include/RFTypeDefs.h \
-    include/serial.h
+    include/serial.h \
+    TcpServer.h

@@ -8,7 +8,8 @@
 #include "include/RFEthernetDetector.h"
 #include <QtCore/QObject>
 #include <QtCharts/QAbstractSeries>
-
+#include <QTcpServer>
+#include <QTcpSocket>
 
 #define GETRESULT_ERROR_VALUE ((USHORT)0xffff)
 #define MIN(a,b) (a<b ? a : b)
@@ -49,13 +50,17 @@ private:
     int nRF625;                                                      // Количество найденных девайсов
     int i, j, k;
     float PointsBuffer[RFDevice::RF625Device::ProfileValuesCount];  //	Буфер для максимального количества (Х,Z *1280)
-    std::vector <RFDevice::RF625Device *> vRF625;                         //
+    std::vector <RFDevice::RF625Device *> vRF625;
     RFDevice::RFEthernetDetector ld;                                 //	Создание объекта для поиска
     USHORT nPoints;                                                  //  количество тоечк
 
     QQuickView *m_appViewer;
     float pointrand[22]={1,1,2,2,3,3,4,2,5,1,6,2,7,3,8,2,9,1,10,2,4,6};
-    long int counter=0;
+    long unsigned int counter=0;
+
+
+    QTcpServer *TcpServer;
+    QTcpSocket *TcpSocket;
 signals:
 
 };

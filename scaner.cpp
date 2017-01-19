@@ -6,7 +6,7 @@
 #include <QtQuick/QQuickItem>
 #include <QtCore/QDebug>
 #include <QtCore/QtMath>
-#include <QTcpServer>
+//#include <QTcpServer>
 
 #define con qDebug()
 
@@ -24,6 +24,7 @@ scaner::scaner(QQuickView *appViewer, QObject *parent) :    QObject(parent),
     qRegisterMetaType<QAbstractAxis*>();
 
     }
+
 void scaner::update(QAbstractSeries *series)
 {
     qDebug("scaner::update");
@@ -49,6 +50,7 @@ void scaner::update(QAbstractSeries *series)
                 }
 
                 qDebug("end cycle scaner::update");
+                std::cout<<counter<<endl;
                 counter++;
 
             }
