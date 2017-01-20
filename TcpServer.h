@@ -7,6 +7,7 @@
 #include <QDataStream>
 #include <QTime>
 #include <QString>
+#include <QByteArray>
 using namespace std;
 class TcpServer : public QObject
 {
@@ -20,13 +21,13 @@ public slots:
     void startServer();
     void incommingConnection();
     void closeServer();
-//    void slotReadClient();
+    void read();
 //    void sendToClient(QTcpSocket* pSocket, const QString& str);
 
 private:
     QTcpServer *serverPointer;
     QTcpSocket *socketPointer;
-      quint16     m_nNextBlockSize;
+    QByteArray data;
     };
 
 #endif // TCPSERVER_H

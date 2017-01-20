@@ -10,7 +10,7 @@ serverPointer = new QTcpServer(this);
 void TcpServer::startServer()
 {
     serverPointer=new QTcpServer(this);
-    if(!serverPointer->listen(QHostAddress::Any,5020))
+    if(!serverPointer->listen(QHostAddress("192.168.13.5"),5020))
     {
         qDebug() << "Server could not start";
     }
@@ -31,17 +31,23 @@ void TcpServer::incommingConnection()
 
 //         for (int i = 0; i < 31623; i++)
 //             cout<< arr[i]?1:0;
-
-    QTcpSocket *socketPointer= serverPointer->nextPendingConnection();//получить сокет входящего подключения
+    socketPointer= serverPointer->nextPendingConnection();//получить сокет входящего подключения
     qDebug()<<"incoming connection";
-    socketPointer->readAll();
-
-   // qDebug()<<socketPointer->read();
-    qDebug()<<"finish transl";
+    connect(socketPointer,SIGNAL(readyRead()),this,SLOT(read()));
 
    // socketPointer->write("Hello client\r\n");
-    socketPointer->flush();
-    socketPointer->waitForBytesWritten(3000);
+//    socketPointer->flush();
+//    socketPointer->waitForBytesWritten(3000);
+}
+
+void TcpServer::read()
+{
+        qDebug()<<"read";
+       data=socketPointer->readAll();
+       qDebug()<<"dataread";
+       qDebug()<<"data is=>>>>"<<data;
+       socketPointer->write(data);
+
 }
 
 void TcpServer::closeServer()
