@@ -50,7 +50,6 @@ void scaner::update(QAbstractSeries *series)
                 }
 
                 qDebug("end cycle scaner::update");
-                std::cout<<counter<<endl;
                 counter++;
 
             }
@@ -141,6 +140,7 @@ void scaner::connectionTO()
 
 void scaner::measurement()
 {
+    qDebug()<<"counter from c++="<<counter;
 
         for (k=0; k<10; k++)
         {

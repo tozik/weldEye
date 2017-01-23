@@ -34,10 +34,6 @@ void TcpServer::incommingConnection()
     socketPointer= serverPointer->nextPendingConnection();//получить сокет входящего подключения
     qDebug()<<"incoming connection";
     connect(socketPointer,SIGNAL(readyRead()),this,SLOT(read()));
-
-   // socketPointer->write("Hello client\r\n");
-//    socketPointer->flush();
-//    socketPointer->waitForBytesWritten(3000);
 }
 
 void TcpServer::read()

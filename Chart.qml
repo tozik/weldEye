@@ -56,14 +56,16 @@ ChartForm {
                 Timer {
                     id: refreshTimer
                     interval: 2000/// 60 * 1000 // 60 Hz
-                    running: true
+                    running: statusScaner
                     repeat: true
-//                    onTriggered: {
-//                            console.log("onTrig");
-//                            deviceScaner.update(chartView.series(0));
-//                            deviceScaner.firstTemplate(chartView.series(1));
+                    onTriggered: {
 
-//                    }
+                            console.log("ststusScaner==",statusScaner);
+                            deviceScaner.update(chartView.series(0));
+                            deviceScaner.firstTemplate(chartView.series(1));
+                            counter++;
+
+                    }
                 }
         }
     }

@@ -4,7 +4,10 @@ import QtQuick.Layouts 1.1
 import QtQml 2.2
 
 Item {
+    id:window
     visible: true
+    property int counter: 0
+    property bool statusScaner: false
 
 
     Chart

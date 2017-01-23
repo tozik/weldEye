@@ -33,7 +33,9 @@ ControlsForm {
 
                                     udpButton.connectUdp=!udpButton.connectUdp;                             //twice button
                                     connectUdp ? tcpButton.enabled=true : tcpButton.enabled=false           //if press tsp dismis udpButton
-                                    !connectUdp ? deviceScaner.search() & deviceScaner.connectionTO() : deviceScaner.disconnection() & deviceScaner.releaseMemory()// & deviceScaner.cleanUpRfdevice()
+                                    !connectUdp ? deviceScaner.search() & deviceScaner.connectionTO() & (window.statusScaner=true)
+                                                : deviceScaner.disconnection() & deviceScaner.releaseMemory() & (window.statusScaner=false)
+                                                 console.log("status",statusScaner)
                                 }
 
                         }
@@ -54,7 +56,14 @@ ControlsForm {
         Row
         {
             id:ipDevice
-            spacing: 5
+            spacing: 10
+            ComboBox {
+
+                model: ["Fanuc USI", "Kawasaki", "Kuka"]
+
+//                currentIndex: 1
+//                onCurrentIndexChanged: console.debug(cbItems.get(currentIndex).text + ", " + cbItems.get(currentIndex).color)
+            }
             TextField
             {
                 id:firstIP
@@ -62,7 +71,7 @@ ControlsForm {
                 maximumLength: 3
                 validator: RegExpValidator
                 {
-                    regExp: /^((?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){0,3}(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$/
+                    regExp: /0-255/
                 }
                 horizontalAlignment: "AlignHCenter"
                 verticalAlignment: "AlignVCenter"
@@ -76,7 +85,7 @@ ControlsForm {
                 maximumLength:3
                 validator: RegExpValidator
                 {
-                    regExp: /^((?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){0,3}(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$/
+                    regExp: /0-255/
                 }
                 horizontalAlignment: "AlignHCenter"
                 verticalAlignment: "AlignVCenter"
@@ -89,7 +98,7 @@ ControlsForm {
                 maximumLength:3
                 validator: RegExpValidator
                 {
-                    regExp: /^((?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){0,3}(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$/
+                    regExp: /0-255/
                 }
                 horizontalAlignment: "AlignHCenter"
                 verticalAlignment: "AlignVCenter"
@@ -102,7 +111,7 @@ ControlsForm {
                 maximumLength:3
                 validator: RegExpValidator
                 {
-                    regExp: /^((?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){0,3}(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$/
+                    regExp: /0-255/
                 }
                 horizontalAlignment: "AlignHCenter"
                 verticalAlignment: "AlignVCenter"
@@ -132,7 +141,7 @@ ControlsForm {
                  checked: false
                  onClicked:
                  {
-                     checked=!checked
+
                  }
               }
             }
