@@ -60,9 +60,8 @@ ControlsForm {
             ComboBox {
 
                 model: ["Fanuc USI", "Kawasaki", "Kuka"]
-
-//                currentIndex: 1
-//                onCurrentIndexChanged: console.debug(cbItems.get(currentIndex).text + ", " + cbItems.get(currentIndex).color)
+                currentIndex: 0
+                onCurrentIndexChanged: console.debug(currentIndex)
             }
             TextField
             {
@@ -71,7 +70,7 @@ ControlsForm {
                 maximumLength: 3
                 validator: RegExpValidator
                 {
-                    regExp: /0-255/
+                    regExp: /^((?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){0,3}(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$/
                 }
                 horizontalAlignment: "AlignHCenter"
                 verticalAlignment: "AlignVCenter"

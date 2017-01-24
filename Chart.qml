@@ -55,7 +55,7 @@ ChartForm {
                 }
                 Timer {
                     id: refreshTimer
-                    interval: 2000/// 60 * 1000 // 60 Hz
+                    interval: 4/// 60 * 1000 // 60 Hz
                     running: statusScaner
                     repeat: true
                     onTriggered: {
