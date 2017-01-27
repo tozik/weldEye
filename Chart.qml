@@ -42,6 +42,7 @@ ChartForm {
                     axisX: axisX
                     axisY: axisY
                     //Legend.enabled: false
+
                 }
 
                 ScatterSeries
@@ -55,7 +56,7 @@ ChartForm {
                 }
                 Timer {
                     id: refreshTimer
-                    interval: 4/// 60 * 1000 // 60 Hz
+                    interval:20/// 60 * 1000 // 60 Hz
                     running: statusScaner
                     repeat: true
                     onTriggered: {

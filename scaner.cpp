@@ -6,7 +6,7 @@
 #include <QtQuick/QQuickItem>
 #include <QtCore/QDebug>
 #include <QtCore/QtMath>
-//#include <QTcpServer>
+
 
 #define con qDebug()
 
