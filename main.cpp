@@ -10,6 +10,7 @@
 #include <QtQml/QQmlEngine>
 #include <QtCore/QDir>
 #include <QQmlEngine>
+#include <QThread>
 #include "TcpServer.h"
 
 int main(int argc, char *argv[])
@@ -26,9 +27,25 @@ int main(int argc, char *argv[])
     viewer.engine()->addImportPath(extraImportPath.arg(QGuiApplication::applicationDirPath(),
                                       QString::fromLatin1("qml")));
 
+    QThread* thread = new QThread;
+    scaner* deviceScaner=new scaner(&viewer);
+    //передаем права владения классом, классу QTHread
+//    deviceScaner->moveToThread(thread);
+//    // Связываем сигнал об ошибки со слотом обработки ошибок(не показан).
+//    connect(deviceScaner, SIGNAL(error(QString)), this, SLOT(errorHandler(QString)));
 
-    scaner deviceScaner(&viewer);
-    viewer.rootContext()->setContextProperty("deviceScaner",&deviceScaner);
+//    // Соединяем сигнал started потока, со слотом process "рабочего" класса, т.е. начинается выполнение нужной работы.
+//    connect(thread, SIGNAL(started()), deviceScaner, SLOT(process()));
+
+//    // По завершению выходим из потока, и удаляем рабочий класс
+//    connect(deviceScaner, SIGNAL(finished()), thread, SLOT(quit()));
+//    connect(deviceScaner, SIGNAL(finished()), deviceScaner, SLOT(deleteLater()));
+
+//    // Удаляем поток, после выполнения операции
+//    connect(thread, SIGNAL(finished()), thread, SLOT(deleteLater()));
+
+//    thread->start();
+    viewer.rootContext()->setContextProperty("deviceScaner",deviceScaner);
     TcpServer objServer;
     viewer.rootContext()->setContextProperty("objServer",&objServer);
 

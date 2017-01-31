@@ -48,20 +48,28 @@ TemplateSetForm {
                 anchors.margins: 10
                 Rectangle{anchors.fill: parent;color: "transparent"; border.color: "steelblue"}
 
-                ChartView{
-                    id:templateView
-
+                Canvas {
+                    id: ex
                     anchors.fill: parent
-                    antialiasing: true
-                    axes: false
-                    LineSeries{
 
-                                XYPoint { x: 0; y: 0 }
-                                XYPoint { x: 1.1; y: 2.1 }
-                                XYPoint { x: 1.9; y: 3.3 }
-                                XYPoint { x: 2.1; y: 2.1 }
-                    }
+                onPaint: {
+                    var ctx = getContext("2d")
+
+                    // setup the stroke
+                    ctx.strokeStyle = "red"
+
+
+                    // create a path
+                    ctx.beginPath()
+                    ctx.moveTo(1,1)
+                    ctx.lineTo(150,50)
+                    ctx.moveTo(300,1)
+                    ctx.lineTo(150,50)
+
+                    // stroke path
+                    ctx.stroke()
                 }
+            }
             }
         }
 }

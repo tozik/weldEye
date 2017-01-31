@@ -17,6 +17,7 @@ ChartForm {
                 anchors.fill: parent
                 property int count: 0
 
+
                 ValueAxis {
                     id: axisY
                     min: -5
@@ -53,6 +54,7 @@ ChartForm {
                     axisYRight: axisY2
                     axisX:axisX
                     //Legend.enabled: false
+
                 }
                 Timer {
                     id: refreshTimer
@@ -68,5 +70,7 @@ ChartForm {
 
                     }
                 }
+
+
         }
     }

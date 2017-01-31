@@ -10,18 +10,18 @@
 
 #define con qDebug()
 
-    QT_CHARTS_USE_NAMESPACE
+QT_CHARTS_USE_NAMESPACE
 
-Q_DECLARE_METATYPE(QAbstractSeries *)
-Q_DECLARE_METATYPE(QAbstractAxis *)
+//Q_DECLARE_METATYPE(QAbstractSeries *)
+//Q_DECLARE_METATYPE(QAbstractAxis *)
 
 
 scaner::scaner(QQuickView *appViewer, QObject *parent) :    QObject(parent),
     m_appViewer(appViewer)
 
 {
-    qRegisterMetaType<QAbstractSeries*>();
-    qRegisterMetaType<QAbstractAxis*>();
+//    qRegisterMetaType<QAbstractSeries*>();
+//    qRegisterMetaType<QAbstractAxis*>();
 
     }
 
