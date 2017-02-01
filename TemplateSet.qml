@@ -27,6 +27,34 @@ TemplateSetForm {
                         anchors.margins: 2
                         height: parent.height/2
                         Rectangle{anchors.fill: parent; border.color: "blue"}
+                        Row {
+                            spacing: 10
+                            Column{
+                                Rectangle{color: "red";border.width: 10;border.color: "red"; radius: 20;}
+                                Label{
+                                    id:labelSizeBetweenPoints
+                                    text: qsTr("Max distanse between points")
+                                }
+                                TextField{
+                                     id:sizeBetweenPoints
+
+                                }
+                            }
+                            Column{
+
+                                id: name
+                                Label{
+                                    id:labelMaxHalfWidtg
+                                    text: qsTr("Max half width")
+                                }
+                                TextField{
+                                     id:maxHalfWidth
+
+
+                                }
+                            }
+
+                        }
 
                     }
                     Row{
@@ -62,9 +90,9 @@ TemplateSetForm {
                     // create a path
                     ctx.beginPath()
                     ctx.moveTo(1,1)
-                    ctx.lineTo(150,50)
-                    ctx.moveTo(300,1)
-                    ctx.lineTo(150,50)
+                    ctx.lineTo(300,350)
+                    ctx.moveTo(300,350)
+                    ctx.lineTo(600,1)
 
                     // stroke path
                     ctx.stroke()
