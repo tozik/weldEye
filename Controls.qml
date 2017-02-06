@@ -156,7 +156,7 @@ ControlsForm {
                                 }
                         Button
                         {
-                            anchors.right: firstColumn.right
+
                             id:applyExpousureTime
                             text: qsTr("Apply")
                         }
@@ -211,7 +211,7 @@ ControlsForm {
                 maximumLength: 3
                 validator: RegExpValidator
                 {
-                    regExp: /^((?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){0,3}(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$/
+                    regExp:/\d+$/
                 }
                 horizontalAlignment: "AlignHCenter"
                 verticalAlignment: "AlignVCenter"
@@ -225,7 +225,7 @@ ControlsForm {
                 maximumLength:3
                 validator: RegExpValidator
                 {
-                    regExp: /^((?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){0,3}(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$/
+                    regExp:/\d+$/
                 }
                 horizontalAlignment: "AlignHCenter"
                 verticalAlignment: "AlignVCenter"
@@ -238,7 +238,7 @@ ControlsForm {
                 maximumLength:3
                 validator: RegExpValidator
                 {
-                    regExp: /^((?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){0,3}(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$/
+                    regExp: /\d+$/
                 }
                 horizontalAlignment: "AlignHCenter"
                 verticalAlignment: "AlignVCenter"
@@ -251,7 +251,7 @@ ControlsForm {
                 maximumLength:3
                 validator: RegExpValidator
                 {
-                    regExp: /^((?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){0,3}(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$/
+                    regExp: /\d+$/
                 }
                 horizontalAlignment: "AlignHCenter"
                 verticalAlignment: "AlignVCenter"
@@ -265,10 +265,10 @@ ControlsForm {
                 id:port
                 width: 80
                 maximumLength: 4
-//                validator: RegExpValidator
-//                {
-//                    regExp: /^((?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){0,3}(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$/
-//                }
+                validator: RegExpValidator
+                {
+                    regExp: /\d+$/
+                }
                 horizontalAlignment: "AlignHCenter"
                 verticalAlignment: "AlignVCenter"
             }

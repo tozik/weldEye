@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     viewer.engine()->addImportPath(extraImportPath.arg(QGuiApplication::applicationDirPath(),
                                       QString::fromLatin1("qml")));
 
-    QThread* thread = new QThread;
+//    QThread* thread = new QThread;
     scaner* deviceScaner=new scaner(&viewer);
     //передаем права владения классом, классу QTHread
 //    deviceScaner->moveToThread(thread);

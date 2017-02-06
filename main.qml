@@ -25,8 +25,8 @@ Item {
         id:template
         anchors.top:chart.bottom
         anchors.left: parent.left
-        anchors.bottom: parent.bottom
         anchors.margins: 5
+        height: 100
     }
 
     Controls
@@ -59,6 +59,7 @@ Item {
         anchors.left:parent.left
         anchors.right: templateSet.left
         anchors.bottom: parent.bottom
+        anchors.top:template.bottom
         anchors.margins: 5
 
     }

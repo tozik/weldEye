@@ -1,7 +1,7 @@
 import QtQuick 2.7
 
 TemplateForm {
-    id:templates
+        id:templates
 
     Row{
         spacing: 20
@@ -113,7 +113,6 @@ TemplateForm {
     }
     }
 }
-
 
 //    "qrc:/seam/U-seam.png"
 //    "qrc:/seam/TB-area.png"
