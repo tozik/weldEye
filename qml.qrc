@@ -21,5 +21,11 @@
         <file>seam/U-seam.png</file>
         <file>seam/V-area.png</file>
         <file>seam/Y-seam.png</file>
+        <file>ButtonsConnectionScaner.qml</file>
+        <file>ButtonsConnectionScanerForm.ui.qml</file>
+        <file>ControlsConnetcionRobot.qml</file>
+        <file>ControlsConnetcionRobotForm.ui.qml</file>
+        <file>ControlsSettingsScaner.qml</file>
+        <file>ControlsSettingsScanerForm.ui.qml</file>
     </qresource>
 </RCC>
