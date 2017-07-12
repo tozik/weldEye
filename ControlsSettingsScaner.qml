@@ -2,6 +2,12 @@ import QtQuick 2.4
 import QtQuick.Controls 2.2
 
 ControlsSettingsScanerForm {
+    Rectangle{
+
+    anchors.fill: parent
+    color: "transparent"
+    border.color: "blue"
+    border.width: 3
     Column
     {
         id:columnSlider
@@ -99,4 +105,5 @@ ControlsSettingsScanerForm {
             }
         }
     }
+}
 }

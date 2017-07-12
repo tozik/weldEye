@@ -5,28 +5,26 @@ import QtQuick.Layouts 1.1
 
 ControlsForm {
     id:controls
-
+//    width: parent.width/2
     signal udpOFF
     signal udpOn
     signal tcpOff
     signal tcpOn
 
     anchors.top: parent.top
-    anchors.right: parent.right
-    width: parent.width/2
+    anchors.right: chart.left
     height: parent.height/4
 
     Rectangle{
         anchors.fill: parent
         color: "transparent"
         border.color: "red"
-        border.width: 10
+        border.width: 3
 
 
         Row
         {
-            spacing: 30
-
+            spacing: 5
             ButtonsConnectionScaner
             {
             }
@@ -36,9 +34,9 @@ ControlsForm {
             {
             }
 
-            ControlsSettingsScaner
-            {
-            }
+//            ControlsSettingsScaner
+//            {
+//            }
         }
 
     }
