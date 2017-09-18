@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.1
 
 ControlsForm {
     id:controls
+
 //    width: parent.width/2
     signal udpOFF
     signal udpOn
@@ -19,12 +20,13 @@ ControlsForm {
         anchors.fill: parent
         color: "transparent"
         border.color: "red"
-        border.width: 1
+        border.width: 0
 
 
         Row
         {
             spacing: 15
+
             ButtonsConnectionScaner
             {
             }

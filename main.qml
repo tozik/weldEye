@@ -16,7 +16,7 @@ Item {
         id:chart
         anchors.top:parent.top
         anchors.left: parent.left
-        anchors.margins: 5
+        anchors.margins: 4
         height: parent.height
         width: parent.width/2
 
