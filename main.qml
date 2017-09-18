@@ -8,7 +8,7 @@ Item {
     visible: true
     property int counter: 0
     property bool statusScaner: false
-
+    property int customFontWidth: chart.width/25
 
     Chart
     {

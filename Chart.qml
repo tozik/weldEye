@@ -7,11 +7,10 @@ ChartForm {
 
         ChartView
         {
-                //Legend.enabled: false
-               //legend.visible: false
-                id:chartView
-                title: "RF625"
 
+                // @disable-check M17
+                legend.visible: false
+                id:chartView
                 theme: ChartView.ChartThemeBlueNcs
                 animationOptions: ChartView.AllAnimations
                 anchors.fill: parent

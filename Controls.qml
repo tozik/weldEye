@@ -19,7 +19,7 @@ ControlsForm {
         anchors.fill: parent
         color: "transparent"
         border.color: "red"
-        border.width: 3
+        border.width: 1
 
 
         Row
@@ -34,9 +34,9 @@ ControlsForm {
             {
             }
 
-//            ControlsSettingsScaner
-//            {
-//            }
+            ControlsSettingsScaner
+            {
+            }
         }
 
     }

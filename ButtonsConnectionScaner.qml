@@ -1,20 +1,19 @@
 import QtQuick 2.4
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
+import QtQuick.Controls.Styles 1.1
 
 ButtonsConnectionScanerForm {
 
     id:buttonsConnectionScanerForm
 
-    anchors.top: parent.top
-    anchors.right: chart.left
     height: chart.height/8
     width: chart.width/3
 
     Rectangle{
         color: "transparent"
-        border.color: "blue"
-        border.width: 5
+        border.color: "transparent"
+        border.width: 1
         anchors.fill: parent
 
         Column{
@@ -25,7 +24,6 @@ ButtonsConnectionScanerForm {
                 id:searchScaner
                 width: chart.width/3
                 text: "Search"
-
             }
             Row{
                 id:rowUdpTcp

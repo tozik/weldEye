@@ -2,19 +2,23 @@ import QtQuick 2.4
 import QtQuick.Controls 2.2
 
 ControlsSettingsScanerForm {
+
+    id:controlsSettingsScanerForm
+    height: chart.height/8
+    width: chart.width/3
     Rectangle{
 
     anchors.fill: parent
     color: "transparent"
     border.color: "blue"
-    border.width: 3
+    border.width: 1
     Column
     {
         id:columnSlider
         spacing: 10
         Row{
             id:rowLaserLevelSlider
-            spacing: 50
+            spacing:chart.width/24
             Slider {
                 id: laserLevelSlider
                 value: 0.5
@@ -53,7 +57,7 @@ ControlsSettingsScanerForm {
             }
             Button
             {   id:apllyLaserLevel
-                anchors.right: firstColumn.right
+                width: chart.width/9
                 text: qsTr("Apply")
             }
         }

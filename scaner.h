@@ -55,7 +55,6 @@ private:
     USHORT nPoints;                                                  //  количество тоечк
 
     QQuickView *m_appViewer;
-    float pointrand[22]={1,1,2,2,3,3,4,2,5,1,6,2,7,3,8,2,9,1,10,2,4,6};
     long unsigned int counter=0;
 
 

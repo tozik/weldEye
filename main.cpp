@@ -11,7 +11,8 @@
 #include <QtCore/QDir>
 #include <QQmlEngine>
 #include <QThread>
-#include "TcpServer.h"
+//#include "TcpServer.h"
+
 
 int main(int argc, char *argv[])
 {
@@ -26,6 +27,8 @@ int main(int argc, char *argv[])
 
     viewer.engine()->addImportPath(extraImportPath.arg(QGuiApplication::applicationDirPath(),
                                       QString::fromLatin1("qml")));
+    viewer.setMinimumWidth(600);
+    viewer.setMinimumHeight(600);
 
 //    QThread* thread = new QThread;
     scaner* deviceScaner=new scaner(&viewer);
@@ -46,8 +49,8 @@ int main(int argc, char *argv[])
 
 //    thread->start();
     viewer.rootContext()->setContextProperty("deviceScaner",deviceScaner);
-    TcpServer objServer;
-    viewer.rootContext()->setContextProperty("objServer",&objServer);
+//    TcpServer objServer;
+//    viewer.rootContext()->setContextProperty("objServer",&objServer);
 
 //    QQmlApplicationEngine engine;
 //    engine.load(QUrl(QLatin1String("qrc:/main.qml")));

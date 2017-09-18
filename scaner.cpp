@@ -27,7 +27,7 @@ scaner::scaner(QQuickView *appViewer, QObject *parent) :    QObject(parent),
 
 void scaner::update(QAbstractSeries *series)
 {
-    qDebug("scaner::update");
+
     if (series) {
         QScatterSeries *xySeries = static_cast<QScatterSeries *>(series);     // приведение типов
                                                                              //classB* B = static_cast<classB*>A;
@@ -48,8 +48,6 @@ void scaner::update(QAbstractSeries *series)
                    xySeries->append(PointsBuffer[j*2],PointsBuffer[j*2+1]);
 
                 }
-
-                qDebug("end cycle scaner::update");
                 counter++;
 
             }
@@ -61,7 +59,7 @@ void scaner::update(QAbstractSeries *series)
 void scaner::firstTemplate(QAbstractSeries *series)
 {
 
-    qDebug("scaner::firsttemplate");
+
     QScatterSeries *point = static_cast<QScatterSeries *>(series);     // приведение типов
     point->clear();
     for (i=0; i<nRF625; i++)

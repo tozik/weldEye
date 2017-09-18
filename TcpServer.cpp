@@ -31,14 +31,14 @@ void TcpServer::incommingConnection()
 
 //         for (int i = 0; i < 31623; i++)
 //             cout<< arr[i]?1:0;
-    socketPointer= serverPointer->nextPendingConnection();//получить сокет входящего подключения
+    socketPointer= serverPointer->nextPendingConnection();                          //получить сокет входящего подключения
     qDebug()<<"incoming connection";
     connect(socketPointer,SIGNAL(readyRead()),this,SLOT(read()));
 }
 
 void TcpServer::read()
 {
-        qDebug()<<"read";
+       qDebug()<<"read";
        data=socketPointer->readAll();
        qDebug()<<"dataread";
        qDebug()<<"data is=>>>>"<<data;
