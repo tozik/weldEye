@@ -1,16 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>Template.qml</file>
-        <file>TemplateForm.ui.qml</file>
-        <file>Controls.qml</file>
-        <file>ControlsForm.ui.qml</file>
-        <file>TemplateSet.qml</file>
-        <file>TemplateSetForm.ui.qml</file>
-        <file>Chart.qml</file>
-        <file>ChartForm.ui.qml</file>
-        <file>Log.qml</file>
-        <file>LogForm.ui.qml</file>
         <file>seam/HU-seam.png</file>
         <file>seam/HY-seam.png</file>
         <file>seam/M-depth.png</file>
@@ -21,11 +11,22 @@
         <file>seam/U-seam.png</file>
         <file>seam/V-area.png</file>
         <file>seam/Y-seam.png</file>
-        <file>ButtonsConnectionScaner.qml</file>
-        <file>ButtonsConnectionScanerForm.ui.qml</file>
-        <file>ControlsConnetcionRobot.qml</file>
-        <file>ControlsConnetcionRobotForm.ui.qml</file>
-        <file>ControlsSettingsScaner.qml</file>
-        <file>ControlsSettingsScanerForm.ui.qml</file>
+        <file>view/ButtonsConnectionScaner.qml</file>
+        <file>view/ButtonsConnectionScanerForm.ui.qml</file>
+        <file>view/Chart.qml</file>
+        <file>view/ChartForm.ui.qml</file>
+        <file>view/Controls.qml</file>
+        <file>view/ControlsConnetcionRobot.qml</file>
+        <file>view/ControlsConnetcionRobotForm.ui.qml</file>
+        <file>view/ControlsForm.ui.qml</file>
+        <file>view/ControlsSettingsScaner.qml</file>
+        <file>view/ControlsSettingsScanerForm.ui.qml</file>
+        <file>view/Log.qml</file>
+        <file>view/LogForm.ui.qml</file>
+        <file>view/MultiButton.qml</file>
+        <file>view/Template.qml</file>
+        <file>view/TemplateForm.ui.qml</file>
+        <file>view/TemplateSet.qml</file>
+        <file>view/TemplateSetForm.ui.qml</file>
     </qresource>
 </RCC>

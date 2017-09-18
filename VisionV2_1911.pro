@@ -18,7 +18,7 @@ RESOURCES += qml.qrc
 contains(TARGET, qml.*) {
     QT += qml quick
 }
-
+RC_ICONS=indexICO.ico
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
 
@@ -56,3 +56,14 @@ HEADERS += \
     include/RFTypeDefs.h \
     include/serial.h \
     TcpServer.h
+
+#DISTFILES += \
+#    ButtonsConnectionScaner.qml\
+#    Chart.qml\
+#    Controls.qml\
+#    ControlsConnetcionRobot.qml\
+#    ControlsSettingsScaner.qml\
+#    Log.qml\
+#    MultiButton.qml\
+#    Template.qml\
+#    TemplateSet.qml\
