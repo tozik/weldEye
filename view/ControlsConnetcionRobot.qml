@@ -51,7 +51,11 @@ ControlsConnetcionRobotForm {
                 spacing: chart.width/100
                 Row{
 
-                    Label{y:10; font.pixelSize:20; text: qsTr("IP")}
+                    Label{
+//                        y:10;
+                        anchors.verticalCenter: firstIP.verticalCenter
+                        font.pixelSize:chart.width/60;
+                        text: qsTr("IP")}
                     TextField
                     {
                         id:firstIP
@@ -107,7 +111,11 @@ ControlsConnetcionRobotForm {
                 }
                 Row
                 {
-                    Label{y:10; font.pixelSize:20; text: qsTr("PORT")}
+                    Label
+                    {
+                    anchors.verticalCenter: port.verticalCenter
+                    font.pixelSize:chart.width/60;
+                    text: qsTr("PORT")}
                     TextField
                     {
                         id:port

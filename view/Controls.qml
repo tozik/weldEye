@@ -24,7 +24,7 @@ ControlsForm {
 
         Row
         {
-            spacing: 5
+            spacing: 15
             ButtonsConnectionScaner
             {
             }

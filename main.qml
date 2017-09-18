@@ -36,7 +36,7 @@ Item {
         anchors.top:parent.top
         anchors.right: parent.right
         width: parent.width/2
-        anchors.margins: 5
+        anchors.margins: 30
     }
 
 
