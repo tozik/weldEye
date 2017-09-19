@@ -15,6 +15,7 @@ ControlsConnetcionRobotForm {
         border.width: 1
         Column
         {
+            id:controlsConnetcionRobot
             spacing: 10
             Row
             {
@@ -129,6 +130,12 @@ ControlsConnetcionRobotForm {
                         verticalAlignment: "AlignBottom"
                     }
                 }
+            }
+            BusyIndicator
+            {
+                running: image.status === Image.Loading
+                anchors.horizontalCenter:controlsConnetcionRobot.horizontalCenter
+
             }
         }
     }

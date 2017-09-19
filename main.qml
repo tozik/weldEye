@@ -36,22 +36,21 @@ Item {
         anchors.top:parent.top
         anchors.right: parent.right
         width: parent.width/2
-        anchors.margins: 30
+        anchors.margins: 26
     }
 
 
 
-//    TemplateSet
-//    {
-//        id:templateSet
-//        anchors.top:controls.bottom
-//        anchors.right: parent.right
-//        anchors.left:chart.right
-//        anchors.bottom: parent.bottom
-//        anchors.margins: 5
+    TemplateSet
+    {
+        id:templateSet
+        anchors.top:controls.bottom
+        anchors.right: parent.right
+        anchors.left:chart.right
+        anchors.bottom: parent.bottom
+        anchors.margins: 5
 
-
-//    }
+    }
 
 //    Log
 //    {

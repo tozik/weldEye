@@ -166,28 +166,50 @@ TemplateSetForm {
                 anchors.margins: 10
                 Rectangle{anchors.fill: parent;color: "transparent"; border.color: "steelblue"}
 
-                Canvas {
-                    id: ex
+                ChartView {
+                    id:templateView
                     anchors.fill: parent
+                    antialiasing: true
+                    backgroundRoundness: 10
+                    // @disable-check M17
+                    legend.visible: false
+                    backgroundColor: "	whitesmoke"
 
-                onPaint: {
-                    var ctx = getContext("2d")
+                    ValueAxis
+                    {   id: valueAxisX
+                        visible: false
+                        min:0
+                        max:10
+                    }
+                    ValueAxis
+                    {
+                        id:valueAxisY
+                        visible: false
+                        min:0
+                        max:10
+                    }
+                    SplineSeries {
+                        pointsVisible: true
+                        axisX: valueAxisX
+                        axisY: valueAxisY
+                        XYPoint { x: 0; y: 10 }
+                        XYPoint { x: 4; y: 1.5 }
+                        XYPoint { x: 5; y: 0 }
+                        XYPoint { x: 6; y: 1.5 }
+                        XYPoint { x: 10; y: 10}
+                    }
+                    SplineSeries {
+                        pointsVisible: true
+                        axisX: valueAxisX
+                        axisY: valueAxisY
+                        XYPoint { x: 0; y: 8 }
+                        XYPoint { x: 4; y: 1.5 }
+                        XYPoint { x: 5; y: 0 }
+                        XYPoint { x: 6; y: 1.5 }
+                        XYPoint { x: 10; y: 8}
 
-                    // setup the stroke
-                    ctx.strokeStyle = "red"
-
-
-                    // create a path
-                    ctx.beginPath()
-                    ctx.moveTo(1,1)
-                    ctx.lineTo(300,350)
-                    ctx.moveTo(300,350)
-                    ctx.lineTo(600,1)
-
-                    // stroke path
-                    ctx.stroke()
+                    }
                 }
-            }
             }
         }
 }

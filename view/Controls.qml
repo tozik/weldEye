@@ -6,7 +6,6 @@ import QtQuick.Layouts 1.1
 ControlsForm {
     id:controls
 
-//    width: parent.width/2
     signal udpOFF
     signal udpOn
     signal tcpOff
@@ -25,7 +24,7 @@ ControlsForm {
 
         Row
         {
-            spacing: 15
+            spacing: 10
 
             ButtonsConnectionScaner
             {

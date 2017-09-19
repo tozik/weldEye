@@ -1,7 +1,8 @@
-import QtQuick 2.4
+import QtQuick 2.7
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
-import QtQuick.Controls.Styles 1.1
+//import QtQuick.Controls.Styles 1.1
+import QtQuick.Controls.Styles 1.4
 
 ButtonsConnectionScanerForm {
 
@@ -9,6 +10,7 @@ ButtonsConnectionScanerForm {
 
     height: chart.height/8
     width: chart.width/3
+    anchors.margins: 10
 
     Rectangle{
         color: "transparent"
@@ -59,6 +61,13 @@ ButtonsConnectionScanerForm {
                     }
                 }
             }
-        }
+                BusyIndicator
+                {
+                    running: image.status === Image.Loading
+                    anchors.horizontalCenter:searchScaner.horizontalCenter
+
+                }
+            }
+
     }
 }

@@ -128,6 +128,26 @@ ControlsSettingsScanerForm {
                 width: chart.width/15
             }
         }
+        Row
+        {
+            id:scanerChose
+            spacing: chart.width/80
+            ComboBox {
+
+                model: ["Riftek RF625", "Ardeonova"]
+                currentIndex: 0
+                onCurrentIndexChanged: console.debug(currentIndex,model[currentIndex])
+                width: chart.width/4
+            }
+            Button
+            {
+
+                id:applySets
+
+                text: qsTr("Apply")
+                width: chart.width/15
+            }
+        }
     }
 }
 }
