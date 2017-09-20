@@ -28,5 +28,6 @@
         <file>view/TemplateForm.ui.qml</file>
         <file>view/TemplateSet.qml</file>
         <file>view/TemplateSetForm.ui.qml</file>
+        <file>view/GlobalTemplateParametrs.qml</file>
     </qresource>
 </RCC>

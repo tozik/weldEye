@@ -5,7 +5,6 @@ import QtQuick.Controls 2.0
 
 
 TemplateSetForm {
-    property double elementWidth: labelSizeBetweenPoints.width+10;
     id:templateSet
     Rectangle {
 
@@ -13,7 +12,7 @@ TemplateSetForm {
             border.color: "blue"
             color:"transparent"
             border.width: 2
-            Column{
+            Rectangle{
                 id:templateSettings
                 anchors.top:parent.top
                 anchors.left: parent.left
@@ -21,7 +20,7 @@ TemplateSetForm {
                 anchors.margins: 10
                 height: parent.height/3
                 Rectangle{anchors.fill: parent; border.color: "white"}
-                    Row{
+                    Rectangle{
                         id:globalParametrsTemplate
                         anchors.top:parent.top
                         anchors.left: parent.left
@@ -29,125 +28,13 @@ TemplateSetForm {
                         anchors.margins: 2
                         height: parent.height/2
                         Rectangle{anchors.fill: parent; border.color: "aliceblue"}
-                        Row {
-                            anchors.fill: parent
-                            anchors.margins: 2
-                            spacing: 50
+                            GlobalTemplateParametrs
+                            {
 
-                                Rectangle{
-                                    id:rectSizeBetweenPoints
-                                    color: "transparent"
-                                    border.width: 2
-                                    border.color: "gainsboro"
-                                    radius: 5
-                                    height:parent.height
-                                    width:elementWidth
-
-                                    Label{
-                                        id:labelSizeBetweenPoints
-                                        anchors.horizontalCenter: rectSizeBetweenPoints.horizontalCenter
-                                        anchors.bottom: labelSizeBetweenPoints.top
-                                        text: qsTr("Max distanse between points")
-                                    }
-                                    TextField{
-                                         id:sizeBetweenPoints
-                                         anchors.horizontalCenter: rectSizeBetweenPoints.horizontalCenter
-                                         anchors.verticalCenter: rectSizeBetweenPoints.verticalCenter
-                                         horizontalAlignment: "AlignHCenter"
-                                         validator: RegExpValidator {
-                                             regExp:/\d+$/
-                                         }
-
-                                    }
-                                }
-                                Rectangle{
-                                    id:rectMaxHalfWidth
-                                    color: "transparent"
-                                    border.width: 2
-                                    border.color: "gainsboro"
-                                    radius: 5
-                                    height:parent.height
-                                    width:elementWidth
-                                    Label{
-                                        id:labelMaxHalfWidth
-                                        anchors.horizontalCenter: rectMaxHalfWidth.horizontalCenter
-                                        anchors.bottom: labelSizeBetweenPoints.top
-                                        text: qsTr("Maximal half width")
-                                    }
-                                    TextField{
-                                         id:sizeMaxHalfWidth
-                                         anchors.horizontalCenter: rectMaxHalfWidth.horizontalCenter
-                                         anchors.verticalCenter: rectMaxHalfWidth.verticalCenter
-                                         horizontalAlignment: "AlignHCenter"
-                                         validator: RegExpValidator {
-                                             regExp:/\d+$/
-                                         }
-
-                                    }
-                                }
-                                Rectangle{
-                                    id:rectMinimalLineLength
-                                    color: "transparent"
-                                    border.width: 2
-                                    border.color: "gainsboro"
-                                    radius: 5
-                                    height:parent.height
-                                    width:elementWidth
-                                    Label{
-                                        id:labelMinimalLineLength
-                                        anchors.horizontalCenter: rectMinimalLineLength.horizontalCenter
-                                        anchors.bottom: labelMinimalLineLength.top
-                                        text: qsTr("Minimal line length")
-
-                                    }
-                                    TextField{
-                                         id:sizeMinimalLineLength
-                                         anchors.horizontalCenter: rectMinimalLineLength.horizontalCenter
-                                         anchors.verticalCenter: rectMinimalLineLength.verticalCenter
-                                         horizontalAlignment: "AlignHCenter"
-                                         validator: RegExpValidator {
-                                             regExp:/\d+$/
-                                         }
-
-                                    }
-                                }
-                                Rectangle{
-                                    id:rectCircleKoeficietn
-                                    color: "transparent"
-                                    border.width: 2
-                                    border.color: "gainsboro"
-                                    radius: 5
-                                    height:parent.height
-                                    width:elementWidth
-                                    Label{
-                                        id:labelCircleKoeficietn
-                                        anchors.horizontalCenter: rectCircleKoeficietn.horizontalCenter
-                                        anchors.bottom: labelCircleKoeficietn.top
-                                        text: qsTr("Circle koeficient ")
-                                    }
-                                    TextField{
-                                         id:sizeCircleKoeficietn
-                                         anchors.horizontalCenter: rectCircleKoeficietn.horizontalCenter
-                                         anchors.verticalCenter: rectCircleKoeficietn.verticalCenter
-                                         horizontalAlignment: "AlignHCenter"
-                                         validator: RegExpValidator {
-                                             regExp:/\d+$/
-                                         }
-
-                                    }
-                                }
-                                Button{
-                                    id:applyGlobalChanges
-                                    text:qsTr("Apply global parametrs")
-                                    onClicked: {}
-                                    y:globalParametrsTemplate.height/2-applyGlobalChanges.height/2
-                                }
-
-
-                        }
+                            }
 
                     }
-                    Row{
+                    Rectangle{
                         id:localParametrsTemplate
                         anchors.left: parent.left
                         anchors.right: parent.right
@@ -157,7 +44,7 @@ TemplateSetForm {
                         Rectangle{anchors.fill: parent; border.color: "green"}
                     }
             }
-            Column{
+            Rectangle{
                 id:viewTemplate
                 anchors.top: templateSettings.bottom
                 anchors.left: parent.left

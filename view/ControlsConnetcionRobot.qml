@@ -133,7 +133,6 @@ ControlsConnetcionRobotForm {
             }
             BusyIndicator
             {
-                running: image.status === Image.Loading
                 anchors.horizontalCenter:controlsConnetcionRobot.horizontalCenter
 
             }

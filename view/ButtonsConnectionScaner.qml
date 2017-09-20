@@ -63,7 +63,6 @@ ButtonsConnectionScanerForm {
             }
                 BusyIndicator
                 {
-                    running: image.status === Image.Loading
                     anchors.horizontalCenter:searchScaner.horizontalCenter
 
                 }

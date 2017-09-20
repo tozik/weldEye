@@ -17,7 +17,7 @@ Item {
         anchors.top:parent.top
         anchors.left: parent.left
         anchors.margins: 4
-        height: parent.height
+        height: parent.height/1.2
         width: parent.width/2
 
     }

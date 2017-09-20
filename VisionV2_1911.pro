@@ -27,34 +27,34 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libs/ -lrfdevice_mingw
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libs/ -lrfdevice_mingwd
-else:unix: LIBS += -L$$PWD/libs/ -lrfdevice_mingw
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libsRiftek/ -lrfdevice_mingw
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libsRiftek/ -lrfdevice_mingwd
+else:unix: LIBS += -L$$PWD/libsRiftek/ -lrfdevice_mingw
 
-INCLUDEPATH += $$PWD/libs
-DEPENDPATH += $$PWD/libs
+INCLUDEPATH += $$PWD/libsRiftek
+DEPENDPATH += $$PWD/libsRiftek
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libs/ -lrfdevice_mingw
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libs/ -lrfdevice_mingwd
-else:unix: LIBS += -L$$PWD/libs/ -lrfdevice_mingw
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libsRiftek/ -lrfdevice_mingw
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libsRiftek/ -lrfdevice_mingwd
+else:unix: LIBS += -L$$PWD/libsRiftek/ -lrfdevice_mingw
 
-INCLUDEPATH += $$PWD/libs
-DEPENDPATH += $$PWD/libs
+INCLUDEPATH += $$PWD/libsRiftek
+DEPENDPATH += $$PWD/libsRiftek
 
 HEADERS += \
     scaner.h \
-    include/linuxTypeDefs.h \
-    include/RF625DDevice.h \
-    include/RF625Device.h \
-    include/RF625Device_Legacy.h \
-    include/RFDevice.h \
-    include/RFEthernetDetector.h \
-    include/RFEthernetDevice.h \
-    include/RFQDPMotorDevice.h \
-    include/RFSerialDevice.h \
-    include/RFString.h \
-    include/RFTypeDefs.h \
-    include/serial.h \
+    headerRiftek/linuxTypeDefs.h \
+    headerRiftek/RF625DDevice.h \
+    headerRiftek/RF625Device.h \
+    headerRiftek/RF625Device_Legacy.h \
+    headerRiftek/RFDevice.h \
+    headerRiftek/RFEthernetDetector.h \
+    headerRiftek/RFEthernetDevice.h \
+    headerRiftek/RFQDPMotorDevice.h \
+    headerRiftek/RFSerialDevice.h \
+    headerRiftek/RFString.h \
+    headerRiftek/RFTypeDefs.h \
+    headerRiftek/serial.h \
     TcpServer.h
 
 #DISTFILES += \
