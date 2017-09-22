@@ -22,14 +22,6 @@ Item {
 
     }
 
-    Template
-    {
-        id:template
-        anchors.top:chart.bottom
-        anchors.left: parent.left
-        anchors.margins: 5
-    }
-
     Controls
     {
         id:controls
@@ -51,18 +43,24 @@ Item {
         anchors.margins: 5
 
     }
-
-//    Log
+//    Template
 //    {
-
-//        id:log
-//        anchors.left:parent.left
-//        anchors.right: templateSet.left
-//        anchors.bottom: parent.bottom
-//        anchors.top:template.bottom
+//        id:template
+//        anchors.top:templateSet.bottom
+//        anchors.right:parent.right
 //        anchors.margins: 5
-
 //    }
+
+    Log
+    {
+
+    id:log
+    anchors.top:chart.bottom
+    anchors.left: parent.left
+    anchors.margins: 5
+
+
+    }
 
 
 

@@ -10,8 +10,8 @@ CONFIG += c++11
 TARGET = TcpServer
 
 SOURCES += main.cpp \
-    scaner.cpp \
-    TcpServer.cpp
+    TcpServer.cpp \
+    scanerRiftek.cpp
 
 RESOURCES += qml.qrc
 
@@ -42,7 +42,6 @@ INCLUDEPATH += $$PWD/libsRiftek
 DEPENDPATH += $$PWD/libsRiftek
 
 HEADERS += \
-    scaner.h \
     headerRiftek/linuxTypeDefs.h \
     headerRiftek/RF625DDevice.h \
     headerRiftek/RF625Device.h \
@@ -55,7 +54,8 @@ HEADERS += \
     headerRiftek/RFString.h \
     headerRiftek/RFTypeDefs.h \
     headerRiftek/serial.h \
-    TcpServer.h
+    TcpServer.h \
+    scanerRiftek.h
 
 #DISTFILES += \
 #    ButtonsConnectionScaner.qml\

@@ -2,9 +2,11 @@ import QtQuick 2.7
 
 TemplateForm {
         id:templates
+        Rectangle{
+            color: "whitesmoke"
 
     Row{
-        spacing: 20
+        spacing: 70
         NumberAnimation {duration:1000}
 
     Image{
@@ -113,7 +115,7 @@ TemplateForm {
     }
     }
 }
-
+}
 //    "qrc:/seam/U-seam.png"
 //    "qrc:/seam/TB-area.png"
 //    "qrc:/seam/Tailored_bank.png"

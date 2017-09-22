@@ -3,7 +3,7 @@
 #include <QApplication>
 #include <QQuickView>
 #include <QQuickStyle>
-#include "scaner.h"
+#include "scanerRiftek.h"
 #include <QtWidgets/QApplication>
 #include <QtQml/QQmlContext>
 #include <QtQuick/QQuickView>

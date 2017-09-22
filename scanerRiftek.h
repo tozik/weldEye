@@ -4,8 +4,8 @@
 #include <QVariant>
 #include <iostream>
 #include <vector>
-#include "include/RF625Device.h"
-#include "include/RFEthernetDetector.h"
+#include "headerRiftek/RF625Device.h"
+#include "headerRiftek/RFEthernetDetector.h"
 #include <QtCore/QObject>
 #include <QtCharts/QAbstractSeries>
 #include <QTcpServer>

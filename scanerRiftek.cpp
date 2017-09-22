@@ -1,4 +1,4 @@
-#include "scaner.h"
+#include "scanerRiftek.h"
 #include <QtCharts/QXYSeries>
 #include <QtCharts/QScatterSeries>
 #include <QtCharts/QAreaSeries>

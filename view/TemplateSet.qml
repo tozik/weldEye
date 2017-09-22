@@ -9,9 +9,10 @@ TemplateSetForm {
     Rectangle {
 
             anchors.fill: parent
-            border.color: "blue"
-            color:"transparent"
+            border.color: "transparent"
+            color:"whitesmoke"
             border.width: 2
+            radius:15
             Rectangle{
                 id:templateSettings
                 anchors.top:parent.top
@@ -19,7 +20,7 @@ TemplateSetForm {
                 anchors.right: parent.right
                 anchors.margins: 10
                 height: parent.height/3
-                Rectangle{anchors.fill: parent; border.color: "white"}
+                Rectangle{anchors.fill: parent; border.color: "whitesmoke"}
                     Rectangle{
                         id:globalParametrsTemplate
                         anchors.top:parent.top
@@ -27,21 +28,28 @@ TemplateSetForm {
                         anchors.right: parent.right
                         anchors.margins: 2
                         height: parent.height/2
-                        Rectangle{anchors.fill: parent; border.color: "aliceblue"}
+                        Rectangle{anchors.fill: parent; border.color: "transparent"; color:"whitesmoke"}
                             GlobalTemplateParametrs
                             {
 
                             }
-
                     }
                     Rectangle{
-                        id:localParametrsTemplate
+                        id:templateList
                         anchors.left: parent.left
                         anchors.right: parent.right
                         anchors.bottom: parent.bottom
                         anchors.margins: 2
                         anchors.top: globalParametrsTemplate.bottom
-                        Rectangle{anchors.fill: parent; border.color: "green"}
+                        Rectangle{
+                            id:templateRect
+                            anchors.fill: parent; border.color: "transparent"; color: "whitesmoke"
+                            Template
+                            {
+
+                            }
+                        }
+
                     }
             }
             Rectangle{
@@ -50,8 +58,8 @@ TemplateSetForm {
                 anchors.left: parent.left
                 anchors.right: parent.right
                 anchors.bottom: parent.bottom
-                anchors.margins: 10
-                Rectangle{anchors.fill: parent;color: "transparent"; border.color: "steelblue"}
+                anchors.margins: 20
+                Rectangle{anchors.fill: parent;color: "transparent"; border.color: "transparent"}
 
                 ChartView {
                     id:templateView
