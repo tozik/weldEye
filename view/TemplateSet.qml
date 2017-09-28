@@ -9,10 +9,8 @@ TemplateSetForm {
     Rectangle {
 
             anchors.fill: parent
-            border.color: "transparent"
-            color:"whitesmoke"
+            border.color: "white"
             border.width: 2
-            radius:15
             Rectangle{
                 id:templateSettings
                 anchors.top:parent.top
@@ -20,7 +18,7 @@ TemplateSetForm {
                 anchors.right: parent.right
                 anchors.margins: 10
                 height: parent.height/3
-                Rectangle{anchors.fill: parent; border.color: "whitesmoke"}
+                Rectangle{anchors.fill: parent;}
                     Rectangle{
                         id:globalParametrsTemplate
                         anchors.top:parent.top
@@ -28,7 +26,7 @@ TemplateSetForm {
                         anchors.right: parent.right
                         anchors.margins: 2
                         height: parent.height/2
-                        Rectangle{anchors.fill: parent; border.color: "transparent"; color:"whitesmoke"}
+                        Rectangle{anchors.fill: parent; border.color: "transparent"; color:"whitesmoke"; radius: 15}
                             GlobalTemplateParametrs
                             {
 
@@ -43,7 +41,7 @@ TemplateSetForm {
                         anchors.top: globalParametrsTemplate.bottom
                         Rectangle{
                             id:templateRect
-                            anchors.fill: parent; border.color: "transparent"; color: "whitesmoke"
+                            anchors.fill: parent; border.color: "transparent"; color: "whitesmoke";radius:15
                             Template
                             {
 
@@ -58,7 +56,6 @@ TemplateSetForm {
                 anchors.left: parent.left
                 anchors.right: parent.right
                 anchors.bottom: parent.bottom
-                anchors.margins: 20
                 Rectangle{anchors.fill: parent;color: "transparent"; border.color: "transparent"}
 
                 ChartView {

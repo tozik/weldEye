@@ -30,7 +30,6 @@ int main(int argc, char *argv[])
     viewer.setMinimumWidth(600);
     viewer.setMinimumHeight(600);
 
-//    QThread* thread = new QThread;
     scaner* deviceScaner=new scaner(&viewer);
     //передаем права владения классом, классу QTHread
 //    deviceScaner->moveToThread(thread);

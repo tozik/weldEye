@@ -57,7 +57,8 @@ Item {
     id:log
     anchors.top:chart.bottom
     anchors.left: parent.left
-    anchors.margins: 5
+    anchors.right: templateSet.left
+    anchors.margins: 50
 
 
     }

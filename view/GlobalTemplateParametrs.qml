@@ -11,9 +11,8 @@ Row {
         Rectangle{
             id:rectSizeBetweenPoints
             color: "transparent"
-            border.width: 2
             border.color: "gainsboro"
-            radius: 5
+            radius: 10
             height:parent.height/3
             width:elementWidth*4
             Row{
@@ -52,7 +51,7 @@ Row {
             color: "transparent"
             border.width: 2
             border.color: "gainsboro"
-            radius: 5
+            radius: 10
             height:parent.height/3
             width:elementWidth*4
             Row{
@@ -91,7 +90,7 @@ Row {
             color: "transparent"
             border.width: 2
             border.color: "gainsboro"
-            radius: 5
+            radius: 10
             height:parent.height/3
             width:elementWidth*4
             Row{
@@ -130,7 +129,7 @@ Row {
             color: "transparent"
             border.width: 2
             border.color: "gainsboro"
-            radius: 5
+            radius: 10
             height:parent.height/3
             width:elementWidth*4
             Row{
