@@ -11,7 +11,8 @@ TARGET = TcpServer
 
 SOURCES += main.cpp \
     TcpServer.cpp \
-    scanerRiftek.cpp
+    scanerRiftek.cpp \
+    popup.cpp
 
 RESOURCES += qml.qrc
 
@@ -401,10 +402,11 @@ HEADERS += \
     headerArdeonova/x64/anovaincludes.h \
     headerArdeonova/x64/GenICam.h \
     headerArdeonova/x64/GenICamFwd.h \
-    headerArdeonova/x64/GenICamVersion.h
+    headerArdeonova/x64/GenICamVersion.h \
+    popup.h
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libsArdeonova/x32/ -lANovaCore
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libsArdeonova/x32/ -lANovaCored
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libsArdeonova/x32/ANovaCore
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libsArdeonova/x32/ANovaCore
 
 INCLUDEPATH += $$PWD/headerArdeonova/x32/device
 DEPENDPATH += $$PWD/headerArdeonova/x32/device

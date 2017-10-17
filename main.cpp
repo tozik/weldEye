@@ -12,6 +12,7 @@
 #include <QQmlEngine>
 #include <QThread>
 //#include "TcpServer.h"
+#include "popup.h"
 
 
 int main(int argc, char *argv[])
@@ -29,8 +30,7 @@ int main(int argc, char *argv[])
                                       QString::fromLatin1("qml")));
     viewer.setMinimumWidth(600);
     viewer.setMinimumHeight(600);
-
-    scaner* deviceScaner=new scaner(&viewer);
+    scanerRIFTEK* deviceScaner=new scanerRIFTEK(&viewer);
     //передаем права владения классом, классу QTHread
 //    deviceScaner->moveToThread(thread);
 //    // Связываем сигнал об ошибки со слотом обработки ошибок(не показан).

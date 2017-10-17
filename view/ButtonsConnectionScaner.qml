@@ -43,7 +43,6 @@ ButtonsConnectionScanerForm {
                         connectUdp ? tcpButton.enabled=true : tcpButton.enabled=false           //if press tsp dismis udpButton
                                      !connectUdp ? deviceScaner.search() & deviceScaner.connectionTO() & (window.statusScaner=true)
                                                  : deviceScaner.disconnection() & deviceScaner.releaseMemory() & (window.statusScaner=false)
-                        //                    console.log("status",statusScaner)
                     }
 
                 }

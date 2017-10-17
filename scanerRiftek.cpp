@@ -6,6 +6,7 @@
 #include <QtQuick/QQuickItem>
 #include <QtCore/QDebug>
 #include <QtCore/QtMath>
+#include "popup.h"
 
 
 #define con qDebug()
@@ -16,7 +17,7 @@ QT_CHARTS_USE_NAMESPACE
 //Q_DECLARE_METATYPE(QAbstractAxis *)
 
 
-scaner::scaner(QQuickView *appViewer, QObject *parent) :    QObject(parent),
+scanerRIFTEK::scanerRIFTEK(QQuickView *appViewer, QObject *parent) :    QObject(parent),
     m_appViewer(appViewer)
 
 {
@@ -25,7 +26,7 @@ scaner::scaner(QQuickView *appViewer, QObject *parent) :    QObject(parent),
 
     }
 
-void scaner::update(QAbstractSeries *series)
+void scanerRIFTEK::update(QAbstractSeries *series)
 {
 
     if (series) {
@@ -56,7 +57,7 @@ void scaner::update(QAbstractSeries *series)
       }
 
     }
-void scaner::firstTemplate(QAbstractSeries *series)
+void scanerRIFTEK::firstTemplate(QAbstractSeries *series)
 {
 
 
@@ -85,12 +86,12 @@ void scaner::firstTemplate(QAbstractSeries *series)
     }
 
 }
-void scaner::secondTemplate(QAbstractSeries *series)
+void scanerRIFTEK::secondTemplate(QAbstractSeries *series)
 {
 
 }
 
-void scaner:: search()
+void scanerRIFTEK:: search()
 {
     RFDevice::Initialize();
     std::cout << "Searching..." << std::endl;
@@ -105,6 +106,10 @@ void scaner:: search()
               if (p)
               {
                   vRF625.push_back(p);
+                  PopUp *popUp;
+                  popUp= new PopUp();
+                  popUp->setPopupText("Найдено 1 устройство");
+                  popUp->show();
               }
               else
               {
@@ -116,7 +121,7 @@ void scaner:: search()
 
 }
 
-void scaner::connectionTO()
+void scanerRIFTEK::connectionTO()
 {
     if(nRF625!=0)
     {
@@ -132,11 +137,10 @@ void scaner::connectionTO()
         }
     }
     }
-    std::cout<<"san9"<<std::endl;
 }
 
 
-void scaner::measurement()
+void scanerRIFTEK::measurement()
 {
     qDebug()<<"counter from c++="<<counter;
 
@@ -164,7 +168,7 @@ void scaner::measurement()
     }
 
 
-void scaner::disconnection()
+void scanerRIFTEK::disconnection()
 {
     for (i=0; i<nRF625; i++)
     {
@@ -180,7 +184,7 @@ void scaner::disconnection()
     }
 }
 
-void scaner::releaseMemory()
+void scanerRIFTEK::releaseMemory()
 {
     while (!vRF625.empty())
     {
@@ -191,7 +195,7 @@ void scaner::releaseMemory()
     std::cout<<"ReleaseMemory"<<std::endl;
 }
 
-void scaner::cleanUpRfdevice()
+void scanerRIFTEK::cleanUpRfdevice()
 {
     RFDevice::Cleanup();
     std::cout<<"cleanUP"<<std::endl;

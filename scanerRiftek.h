@@ -1,5 +1,5 @@
-#ifndef SCANER_H
-#define SCANER_H
+#ifndef SCANERRIFTEK_H
+#define SCANERRIFTEK_H
 
 #include <QVariant>
 #include <iostream>
@@ -22,13 +22,13 @@ QT_END_NAMESPACE
 
 using namespace QtCharts;
 
-class scaner : public QObject
+class scanerRIFTEK : public QObject
 {
     Q_OBJECT
 
 public:
 
-    explicit scaner(QQuickView *appViewer, QObject *parent = 0);
+    explicit scanerRIFTEK(QQuickView *appViewer, QObject *parent = 0);
 
 Q_SIGNALS:
 public slots:

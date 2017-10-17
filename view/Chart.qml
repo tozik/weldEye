@@ -62,10 +62,8 @@ ChartForm {
                     repeat: true
                     onTriggered: {
 
-                            console.log("ststusScaner==",statusScaner);
                             deviceScaner.update(chartView.series(0));
                             deviceScaner.firstTemplate(chartView.series(1));
-                            counter++;
 
                     }
                 }
